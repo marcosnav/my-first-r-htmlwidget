@@ -5,11 +5,11 @@ HTMLWidgets.widget({
     let jm;
     
     return {
-      renderValue: function(meta, options, nodes) {
-        options.container = el.id;
-        jm = new jsMind(options);
+      renderValue: function(payload) {
+        payload.options.container = el.id;
+        jm = new jsMind(payload.options);
         jm.show({
-          meta: meta,
+          meta: payload.meta,
           format: 'node_array',
           data: [
             {"id":"root", "isroot":true, "topic":"jsMind"},

@@ -1,6 +1,6 @@
 #' @import htmlwidgets
 #' @export
-tanuki <- function(nodes, theme = "greensea") {
+tanuki <- function(nodes, theme = "greensea", width = NULL, height = NULL) {
   # mindmap options
   options <- list(
     theme = theme,
@@ -13,9 +13,15 @@ tanuki <- function(nodes, theme = "greensea") {
     author = "Marcos Navarro",
     version = "0.1"
   )
+
+  payload <- list(
+    options = options,
+    meta = meta,
+    ndoes = nodes,
+  )
   
   # create the widget
-  htmlwidgets::createWidget("tanuki", meta, options, nodes)
+  htmlwidgets::createWidget("tanuki", payload, width = width, height = height)
 }
 
 #' @export
