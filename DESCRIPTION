@@ -1,0 +1,12 @@
+Package: tanuki
+Type: Package
+Title: Interface to jsmaps.js to create mindmaps
+Version: 1.0
+Date: 2020-11-04
+Author: Marcos Navarro
+Maintainer: Marcos Navarro <m@marcosn.com>
+Description: Interface to jsmaps.js to create mindmaps
+License: MIT
+Imports:
+  htmlwidgets (>= 0.3)
+RoxygenNote: 7.1.1
