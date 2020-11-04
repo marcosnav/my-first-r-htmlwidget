@@ -5,22 +5,18 @@ HTMLWidgets.widget({
     let jm;
     
     return {
-      renderValue: function(payload) {
-        payload.options.container = el.id;
-        jm = new jsMind(payload.options);
+      renderValue: function(x) {
+        x.options.container = el.id;
+        jm = new jsMind(x.options);
         jm.show({
-          meta: payload.meta,
+          meta: x.meta,
           format: 'node_array',
-          data: [
-            {"id":"root", "isroot":true, "topic":"jsMind"},
-            {"id":"easy", "parentid":"root", "topic":"Easy", "direction":"left"},
-            {"id":"easy1", "parentid":"easy", "topic":"Easy to show"},
-          ],
+          data: x.nodes,
         });
       },
       
-      // resize: function(width, height) {
-      // }
+      resize: function(width, height) {
+      },
 
       t: jm,
     };
